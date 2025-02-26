@@ -1,21 +1,21 @@
-from dotenv import load_dotenv  #Biblioteca para utilização do dotenv
-import os #Biblioteca para utilização do dotenv
+from dotenv import load_dotenv  # Biblioteca para utilização do dotenv
+import os # Biblioteca para interação com o sistema operacional, usada nesse caso para carregar variáveis de ambiente
 from langchain_groq import ChatGroq # Biblioteca para utilização do grop
 
-from langchain_core.runnables import RunnableLambda ## para transformar as funções em etapas para chain aceitar sem erro com |
+from langchain_core.runnables import RunnableLambda # Permite encapsular funções como etapas reutilizáveis em pipelines do LangChain
 
 # Importando as funçoes do módulo "model"
 from model import validate_question
 from model import processing_questions
 from model import virtual_teacher
 
-# Salva a chave api em uma variavel e carrega ela e verificar se está valida
+# Salva a chave API em uma variavel, carregando ela e verificar se está válida
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 if api_key is None:
     raise ValueError("A chave de API da Groq não foi encontrada. Verifique se o arquivo .env está configurado corretamente.")
 
-# Modelo Groq
+# Criação do modelo Groq, com definição do modelo, temperatura que define o nível de criatividade e limite máximo de tentativas caso falhe as requisições
 groq = ChatGroq(
     model="llama3-70b-8192",
     temperature=0.5,
@@ -26,42 +26,28 @@ groq = ChatGroq(
 if __name__ == "__main__":
     while True: 
         try:
-        
+            # Solicita uma perunta matemática ao usuário
             question = input("Faça uma pergunta matématica: ")
+            # Da a opção de sair do programa ao usuário
             if question.lower() == "sair":
                 print("Saindo....")
                 break
 
-        
-            # Tornando as funçoes 
-        
-            valid_question = RunnableLambda(validate_question)
-        
+            # Criando funções como etapas para a Chain
+            valid_question = RunnableLambda(validate_question)        
             json_question = RunnableLambda(processing_questions)
-        
             teacher_awnser = RunnableLambda(virtual_teacher)
 
-
-
-
-        
-            # Criação de um Chain
-        
+            # Criação de um Chain        
             chain = valid_question | json_question | teacher_awnser | groq
 
-
-        
+            # Obtendo resposta do modelo e imprimindo na tela
             response = chain.invoke(question)
-
-
-        
             print(response.content)
 
             print("\nCaso queira sair digite Sair")
 
-        
-        except ValueError as e:
-        
+        except ValueError as e: # Tratamento do erro caso o usário nao faça uma pergunta matemática
             print(e)
-        
             print("Tente novamente ")
+            
