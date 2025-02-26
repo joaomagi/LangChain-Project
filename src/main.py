@@ -27,9 +27,9 @@ if __name__ == "__main__":
     while True: 
         try:
             # Solicita uma perunta matemática ao usuário
-            question = input("Faça uma pergunta matématica: ")
+            user_input = input("Faça uma pergunta matématica: ")
             # Da a opção de sair do programa ao usuário
-            if question.lower() == "sair":
+            if user_input.lower() == "sair":
                 print("Saindo....")
                 break
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             chain = valid_question | json_question | teacher_awnser | groq
 
             # Obtendo resposta do modelo e imprimindo na tela
-            response = chain.invoke(question)
+            response = chain.invoke(user_input)
             print(response.content)
 
             print("\nCaso queira sair digite Sair")
@@ -50,4 +50,3 @@ if __name__ == "__main__":
         except ValueError as e: # Tratamento do erro caso o usário nao faça uma pergunta matemática
             print(e)
             print("Tente novamente ")
-            
