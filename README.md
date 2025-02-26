@@ -52,4 +52,4 @@ Para resolver 2 + 2:
 ## Referências
 - [Documentação Oficial do LangChain](https://python.langchain.com/)
 - [Console Groq](https://console.groq.com/docs/text-chat)
--[Curso Udemy](https://www.udemy.com/course/lanchain/?couponCode=KEEPLEARNINGBR)
+- [Curso Udemy](https://www.udemy.com/course/lanchain/?couponCode=KEEPLEARNINGBR)
