@@ -19,6 +19,12 @@ GROQ_API_KEY=SuaChaveAPI
 
 Carregue as variáveis de ambiente no seu script utilizando `dotenv`.
 
+## Utilizando o Programa
+Após realizar a instalação das dependencias e configuração da sua chave API pasta realizar esse comando no CMD (É necessário arrumar o caminho para a pasta corretamente usando cd "NomeDoDiretorio"
+```cmd
+C:\LangChain-Project\src> python main.py
+```
+
 ## Estrutura do Código
 O código é estruturado em funções que desempenham as seguintes tarefas:
 
