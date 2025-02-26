@@ -1,9 +1,10 @@
-from dotenv import load_dotenv # Biblioteca para utilização do dotenv
-import os # Biblioteca para utilização do dotenv
+from dotenv import load_dotenv  #Biblioteca para utilização do dotenv
+import os #Biblioteca para utilização do dotenv
 from langchain_groq import ChatGroq # Biblioteca para utilização do grop
 
 from langchain_core.runnables import RunnableLambda ## para transformar as funções em etapas para chain aceitar sem erro com |
 
+# Importando as funçoes do módulo "model"
 from model import validate_question
 from model import processing_questions
 from model import virtual_teacher
@@ -23,17 +24,44 @@ groq = ChatGroq(
 
 
 if __name__ == "__main__":
+    while True: 
+        try:
+        
+            question = input("Faça uma pergunta matématica: ")
+            if question.lower() == "sair":
+                print("Saindo....")
+                break
 
-    question = input("Faça uma pergunta matemática: ")
+        
+            # Tornando as funçoes 
+        
+            valid_question = RunnableLambda(validate_question)
+        
+            json_question = RunnableLambda(processing_questions)
+        
+            teacher_awnser = RunnableLambda(virtual_teacher)
 
-    # Tornando as funçoes 
-    valid_question = RunnableLambda(validate_question)
-    json_question = RunnableLambda(processing_questions)
-    teacher_awnser = RunnableLambda(virtual_teacher)
 
-    # Criação de um Chain
-    chain = valid_question | json_question | teacher_awnser | groq
 
-    response = chain.invoke(question)
 
-    print(response.content)
+        
+            # Criação de um Chain
+        
+            chain = valid_question | json_question | teacher_awnser | groq
+
+
+        
+            response = chain.invoke(question)
+
+
+        
+            print(response.content)
+
+            print("\nCaso queira sair digite Sair")
+
+        
+        except ValueError as e:
+        
+            print(e)
+        
+            print("Tente novamente ")

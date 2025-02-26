@@ -3,16 +3,15 @@ import re # Biblioteca para validar se uma string contem um caracter
 
 
 # Criação de um modelo que contenha algumas expressões matemáticas para validação
-math_expressions =  r"[0-9+\-×÷=]|\b(soma|subtração|multiplicação|divisão|igual|)\b"
+math_expressions =  r"[0-9+\-×÷=]|\b(soma|subtração|multiplicação|divisão|igual)\b"
 
 
 # Validação aperenta estar correta necessita de mais alguns testes
 def validate_question(question: str):
-        while True:
-            if not re.search(math_expressions,question, re.IGNORECASE): #IGNORECASE
-               print("Tente uma pergunta que contenha números ou expressões matemáticas")
-            else:
-                return question
+    if not re.search(math_expressions,question, re.IGNORECASE): #IGNORECASE
+       raise ValueError("A pergunta não é sobre matemática")  # Envia uma exceção em vez de retornar erro
+    else:
+        return question
         
 def processing_questions(question):    
     question_dict = {
@@ -26,7 +25,7 @@ def processing_questions(question):
 
 def virtual_teacher(json_question):
     prompt = [
-    ("system", "You are a math-focused AI. Your goal is to answer math problems, in a simple way, with step-by-step resolutions, clear explanations, in Brazilian Portuguese."),
-    ("human", json_question),
+        ("system", "You are a math-focused AI. Your goal is to answer math problems, in a simple way, with step-by-step resolutions, clear explanations, in Brazilian Portuguese."),
+        ("human", json_question),
     ]
     return prompt
