@@ -1,7 +1,7 @@
 # LangChain-Project
 
 ## Introdução
-Este documento serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas.
+Este documento serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas de forma simples.
 
 ## Dependências
 Certifique-se de instalar as seguintes bibliotecas antes de executar o código:
@@ -26,10 +26,10 @@ O código é estruturado em funções que desempenham as seguintes tarefas:
    - Verifica se a pergunta contém números ou expressões matemáticas.
 
 2. **Processamento da Pergunta:**
-   - Converte a pergunta para um formato JSON para enviar para "Professor Virtual"
+   - Converte a pergunta para um formato JSON para enviar para a IA ("Professor Virtual")
 
 3. **Interação com a IA:**
-   - Define o prompt para a IA responder de maneira didática e simples.
+   - Define o prompt para a IA ("Professor Virtual") responder de maneira didática e simples.
 
 4. **Execução da Cadeia:**
    - Utiliza `RunnableLambda` para encadear as operações de validação, processamento e resposta.
