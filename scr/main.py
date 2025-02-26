@@ -50,35 +50,18 @@ def virtual_teacher(json_question):
     ]
     return prompt
 
-question = input("teste: ")
+if __name__ == "__main__":
 
-valid_question = RunnableLambda(validate_question)
+    question = input("Faça uma pergunta matemática: ")
 
-json_question = RunnableLambda(processing_questions)
+    # Tornando as funçoes 
+    valid_question = RunnableLambda(validate_question)
+    json_question = RunnableLambda(processing_questions)
+    teacher_awnser = RunnableLambda(virtual_teacher)
 
-teacher_awnser = RunnableLambda(virtual_teacher)
+    # Criação de um Chain
+    chain = valid_question | json_question | teacher_awnser | groq
 
-chain = valid_question | json_question | teacher_awnser | groq
+    response = chain.invoke(question)
 
-response = chain.invoke(question)
-
-print(response.content)
-
-'''
-# Para testar se está funcionando
-
-messages = [
-    ("system", "You are a math-focused AI. Your goal is to answer math problems in simple ways, step-by-step resolutions, clear explanations, in Brazilian Portuguese."),
-    ("human", valid_question),
-]
-
-response = groq.invoke(messages)
-
-# https://console.groq.com/docs/text-chat
-
-print(response.content)
-
-'''
-# runnable_sequence = validacao | messages | groq | json
-
-# if __name__ == "__main__":
+    print(response.content)
