@@ -25,7 +25,7 @@ Carregue as variáveis de ambiente no seu script utilizando `dotenv`.
 Este cápitulo serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas de forma simples.
 
 ## Utilizando o Programa
-Após instalar as dependências e configurar sua chave de API, certifique-se que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados da forma correta e navegue até o diretório do projeto e execute por exemplo:
+Após instalar as dependências e configurar sua chave de API, certifique-se que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados da forma correta e navegue até o diretório do projeto e execute como no exemplo:
 ```cmd
 C:\LangChain-Project\src> python main.py
 ```
