@@ -1,5 +1,3 @@
-# Versão teste necessário validar
-
 from langgraph.graph import StateGraph, END
 from dataclasses import dataclass
 import re
