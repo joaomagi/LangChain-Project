@@ -5,7 +5,7 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 
 - [LangChain](#LangChain)  
 - [LangGraph](#LangGraph)
-- [Visualição do Fluxo](#Visualicao-do-Fluxo)
+- [Visualização do Fluxo](#Visualizacao-do-Fluxo)
 - [Exemplos de Entrada/Saída](#Exemplos-de-EntradaSaida)  
 
 ## Dependências
@@ -69,7 +69,7 @@ A conexão entre os nós ocorre na seguinte ordem:
 O ponto de entrada do fluxo é o nó `validate_receptor`.
 
 ## Visualização do Fluxo
-Para gerar uma representação visual do fluxo LangGraph, utilize o seguinte código:
+Para gerar uma representação visual do fluxo LangGraph, é necessário instalar as bibliotecas necessárias e utilizar o seguinte código:
 
 ```python
 from IPython.display import Image, display
@@ -81,6 +81,7 @@ with open("graph.mmd", "w") as f:
 
 print("Diagrama Mermaid salvo como graph.mmd")
 ```
+
 <p align="center">
 <img src="https://github.com/joaomagi/LangChain-Project/blob/main/Images/DiagramaWorkflow.png" width="400">
 </p>
