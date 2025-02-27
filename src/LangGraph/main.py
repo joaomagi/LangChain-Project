@@ -50,14 +50,3 @@ if __name__ == "__main__": # Verifica se o nome atual é main
             print(e)
             print("Tente novamente ")
     
-
-"""
-from IPython.display import Image, display
-
-mermaid_code = str(app.get_graph().draw_mermaid())
-
-with open("graph.mmd", "w") as f:
-    f.write(mermaid_code)
-
-print("Diagrama Mermaid salvo como graph.mmd")
-"""

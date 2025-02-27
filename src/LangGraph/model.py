@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass # Biblioteca para facilitar a criação de classes, gerando automaticamente métodos como __init__, __repr__,
 import re # Biblioteca para validar se uma string contem um caracter específico 
 import json # Biblioteca para converter dicionários para json
 
@@ -25,14 +25,15 @@ groq = ChatGroq(
     max_retries=2,
 )
 
-# Define o estado da conversação
+# Define o estado da conversa com uma lista de mensagens
 class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 # Criação de uma variável que contenha algumas expressões matemáticas para validação
 math_expressions = r"[0-9+\-×÷=]|\b(soma|subtração|multiplicação|divisão|igual|pi)\b"
 
-@dataclass
+# Define uma classe para armazenar o estado da pergunta e resposta matemáticas
+@dataclass # O decorador @dataclass simplifica a criação de classes
 class MathState:
     question: str
     response: str = ""
@@ -48,6 +49,7 @@ def validate_node(state: MathState):
     validate_question(state.question)
     return JSONState(state.question)
 
+# Define uma classe para representar o estado JSON da pergunta
 @dataclass
 class JSONState:
     text: str
@@ -61,6 +63,7 @@ class JSONState:
 def to_json_node(state: JSONState):
     return VirtualTeacherState(json_question=state.to_json())
 
+# Define uma classe para armazenar o estado do professor virtual, contendo a pergunta em JSON
 @dataclass
 class VirtualTeacherState:
     json_question: str
