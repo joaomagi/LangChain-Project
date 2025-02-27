@@ -6,7 +6,7 @@ from langchain_core.runnables import RunnableLambda # Permite encapsular funçõ
 
 # Importando as funçoes do módulo "model"
 from model import validate_question
-from model import processing_questions
+from model import processing_toJSON
 from model import virtual_teacher
 
 # Salva a chave API em uma variavel, carregando ela e verificar se está válida
@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
             # Criando funções como etapas para a Chain
             valid_question = RunnableLambda(validate_question)        
-            json_question = RunnableLambda(processing_questions)
+            json_question = RunnableLambda(processing_toJSON)
             teacher_awnser = RunnableLambda(virtual_teacher)
 
             # Criação de um Chain        
@@ -45,7 +45,7 @@ if __name__ == "__main__":
             response = chain.invoke(user_input)
             print(response.content)
 
-            print("\nCaso queira sair digite Sair")
+            print("\nCaso queira sair digite Sair\n")
 
         except ValueError as e: # Tratamento do erro caso o usário nao faça uma pergunta matemática
             print(e)

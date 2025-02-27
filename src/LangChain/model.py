@@ -13,7 +13,7 @@ def validate_question(question: str):
     return question
 
 # Função para processar e converter a perunta para o formato JSON
-def processing_questions(question: str):    
+def processing_toJSON(question: str):    
     return json.dumps({"question": question, "category":"math"}) # Formata a pergunta como JSON, incluindo a categoria 'math'
   
 
