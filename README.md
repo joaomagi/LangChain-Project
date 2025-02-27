@@ -5,8 +5,8 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 
 - [LangChain](#LangChain)  
 - [LangGraph](#LangGraph)
-- [Visualição do Fluxo](#Visualição-do-Fluxo)
-- [Exemplos de Entrada/Saída](#Exemplos-de-Entrada/Saída)  
+- [Visualição do Fluxo](#Visualicao-do-Fluxo)
+- [Exemplos de Entrada/Saída](#Exemplos-de-EntradaSaida)  
 
 ## Dependências
 Certifique-se de instalar as seguintes bibliotecas antes de executar os códigos:
@@ -81,6 +81,7 @@ with open("graph.mmd", "w") as f:
 
 print("Diagrama Mermaid salvo como graph.mmd")
 ```
+![Fluxo LangGraph](https://github.com/joaomagi/LangChain-Project/blob/main/Images/DiagramaWorkflow.png)
 
 ## Exemplos de Entrada/Saída
 Esses exemplos servem tanto para o LangChain quanto para o LangGraph.
