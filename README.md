@@ -30,11 +30,11 @@ Este capítulo serve como base para a implementação de um pipeline utilizando 
 Após instalar as dependências e configurar sua chave de API, certifique-se de que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados corretamente. Navegue até o diretório do projeto e execute:
 
 ```cmd
-C:\LangChain-Project\src> python main.py
+python main.py
 ```
 
 ## Estrutura do Código
-O código é estruturado em funções que desempenham as seguintes tarefas:
+O código é estruturado com as seguintes funções:
 
 1. **validate_question:**
    - Verifica se a pergunta contém números ou expressões matemáticas.
@@ -70,6 +70,10 @@ O ponto de entrada do fluxo é o nó `validate_receptor`.
 
 ## Visualização do Fluxo
 Para gerar uma representação visual do fluxo LangGraph, é necessário instalar as bibliotecas necessárias e utilizar o seguinte código:
+
+```cmd
+pip install ipython
+````
 
 ```python
 from IPython.display import Image, display
