@@ -5,8 +5,9 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 
 - [LangChain](#LangChain)  
 - [LangGraph](#LangGraph)
-- [Visualição do Fluxo](#Visualição-do-Fluxo)
-- [Exemplos de Entrada/Saída](#Exemplos-de-Entrada/Saída)  
+- [Visualização do Fluxo](#visualiza%C3%A7%C3%A3o-do-fluxo)  
+- [Exemplos de Entrada/Saída](#exemplos-de-entrada-sa%C3%ADda)
+  
 
 ## Dependências
 Certifique-se de instalar as seguintes bibliotecas antes de executar os códigos:
@@ -30,11 +31,11 @@ Este capítulo serve como base para a implementação de um pipeline utilizando 
 Após instalar as dependências e configurar sua chave de API, certifique-se de que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados corretamente. Navegue até o diretório do projeto e execute:
 
 ```cmd
-C:\LangChain-Project\src> python main.py
+python main.py
 ```
 
 ## Estrutura do Código
-O código é estruturado em funções que desempenham as seguintes tarefas:
+O código é estruturado com as seguintes funções:
 
 1. **validate_question:**
    - Verifica se a pergunta contém números ou expressões matemáticas.
@@ -69,7 +70,11 @@ A conexão entre os nós ocorre na seguinte ordem:
 O ponto de entrada do fluxo é o nó `validate_receptor`.
 
 ## Visualização do Fluxo
-Para gerar uma representação visual do fluxo LangGraph, utilize o seguinte código:
+Para gerar uma representação visual do fluxo LangGraph, é necessário instalar as bibliotecas necessárias e utilizar o seguinte código:
+
+```cmd
+pip install ipython
+````
 
 ```python
 from IPython.display import Image, display
@@ -81,6 +86,10 @@ with open("graph.mmd", "w") as f:
 
 print("Diagrama Mermaid salvo como graph.mmd")
 ```
+
+<p align="center">
+<img src="https://github.com/joaomagi/LangChain-Project/blob/main/Images/DiagramaWorkflow.png" width="400">
+</p>
 
 ## Exemplos de Entrada/Saída
 Esses exemplos servem tanto para o LangChain quanto para o LangGraph.
