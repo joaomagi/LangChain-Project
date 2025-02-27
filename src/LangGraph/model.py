@@ -4,11 +4,18 @@ import json
 
 import os
 from dotenv import load_dotenv
+
 from langchain_groq import ChatGroq
+
+
+from typing import Annotated
+from typing_extensions import TypedDict
+
+from langgraph.graph.message import add_messages
+
 
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
-
 if api_key is None:
     raise ValueError("A chave de API da Groq não foi encontrada. Verifique se o arquivo .env está configurado corretamente.")
 
@@ -17,6 +24,9 @@ groq = ChatGroq(
     temperature=0.5,
     max_retries=2,
 )
+
+class State(TypedDict):
+    messages: Annotated[list, add_messages]
 
 math_expressions = r"[0-9+\-×÷=]|\b(soma|subtração|multiplicação|divisão|igual|Pi)\b"
 
@@ -32,7 +42,7 @@ def validate_question(question: str):
 
 def validate_node(state: MathState):
     validate_question(state.question)
-    return JSONState(text=state.question)
+    return JSONState(state.question)
 
 @dataclass
 class JSONState:
