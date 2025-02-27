@@ -5,8 +5,9 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 
 - [LangChain](#LangChain)  
 - [LangGraph](#LangGraph)
-- [Visualização do Fluxo](#visualizacao-do-fluxo)
-- [Exemplos de Entrada/Saída](#exemplos-de-entrada-saída)
+- [Visualização do Fluxo](#visualizacao-do-fluxo)  
+- [Exemplos de Entrada/Saída](#exemplos-de-entradasaida)
+
 
 
 ## Dependências
