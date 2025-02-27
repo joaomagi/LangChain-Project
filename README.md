@@ -81,7 +81,7 @@ with open("graph.mmd", "w") as f:
 
 print("Diagrama Mermaid salvo como graph.mmd")
 ```
-<img src="https://github.com/joaomagi/LangChain-Project/blob/main/Images/Untitled%20diagram-2025-02-27-211734.png" width="400">
+<img src="https://github.com/joaomagi/LangChain-Project/blob/main/Images/DiagramaWorkflow.png" width="400">
 
 
 ## Exemplos de Entrada/Saída
