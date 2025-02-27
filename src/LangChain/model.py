@@ -2,7 +2,7 @@ import json # Biblioteca para converter dicionários para json
 import re # Biblioteca para validar se uma string contem um caracter específico 
 
 
-# Criação de um modelo que contenha algumas expressões matemáticas para validação
+# Criação de uma variável que contenha algumas expressões matemáticas para validação
 math_expressions =  r"[0-9+\-×÷=]|\b(soma|subtração|multiplicação|divisão|igual|Pi)\b"
 
 

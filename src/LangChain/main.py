@@ -23,7 +23,7 @@ groq = ChatGroq(
 )
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # Verifica se o nome atual é main
     while True: 
         try:
             # Solicita uma perunta matemática ao usuário
