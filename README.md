@@ -81,8 +81,9 @@ with open("graph.mmd", "w") as f:
 
 print("Diagrama Mermaid salvo como graph.mmd")
 ```
+<p align="center">
 <img src="https://github.com/joaomagi/LangChain-Project/blob/main/Images/DiagramaWorkflow.png" width="400">
-
+</p>
 
 ## Exemplos de Entrada/Saída
 Esses exemplos servem tanto para o LangChain quanto para o LangGraph.
