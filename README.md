@@ -1,12 +1,15 @@
 # LangChain-Project
 
 ## Introdução
-Este documento serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas de forma simples.
+Este documento apresenta duas abordagen para a construção de um professor virtual especializado em matemática, utilizando LangChain e LangGraph. O objetivo é demonstrar diferentes perspectivas para essa implementação, faremos o uso da API da Groq para o processamento e geração de respostas.
+
+- [LangChain](#LangChain)  
+- [LangGraph](#LangGraph)  
 
 ## Dependências
-Certifique-se de instalar as seguintes bibliotecas antes de executar o código:
+Certifique-se de instalar as seguintes bibliotecas antes de executar os códigos:
 
-```bash
+```cmd
 pip install -r requirements.txt
 ```
 
@@ -16,11 +19,13 @@ Crie um arquivo `.env` e adicione sua chave de API da Groq:
 ```ini
 GROQ_API_KEY=SuaChaveAPI
 ```
-
 Carregue as variáveis de ambiente no seu script utilizando `dotenv`.
 
+# LangChain
+Este cápitulo serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas de forma simples.
+
 ## Utilizando o Programa
-Após realizar a instalação das dependencias e configuração da sua chave API pasta realizar esse comando no CMD (É necessário arrumar o caminho para a pasta corretamente usando cd "NomeDoDiretorio"
+Após instalar as dependências e configurar sua chave de API, certifique-se que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados da forma correta e navegue até o diretório do projeto e execute como no exemplo:
 ```cmd
 C:\LangChain-Project\src> python main.py
 ```
@@ -31,7 +36,7 @@ O código é estruturado em funções que desempenham as seguintes tarefas:
 1. **Validação de Perguntas:**
    - Verifica se a pergunta contém números ou expressões matemáticas.
 
-2. **Processamento da Pergunta:**
+2. **Conversão para Json:**
    - Converte a pergunta para um formato JSON para enviar para a IA ("Professor Virtual")
 
 3. **Interação com a IA:**
@@ -123,6 +128,14 @@ x = -8 ou x = 5
 Portanto, as soluções da equação são x = -8 e x = 5.
 
 ```
+# LangGraph
+
+
+
+
+
+
+
 
 ## Referências
 - [Documentação Oficial do LangChain](https://python.langchain.com/)
