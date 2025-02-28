@@ -8,6 +8,9 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 - [Visualização do Fluxo](#visualiza%C3%A7%C3%A3o-do-fluxo)  
 - [Exemplos de Entrada/Saída](#exemplos-de-entrada-sa%C3%ADda)
   
+## Pré Requisitos
+- Python 3.12
+- Git
 
 ## Dependências
 Certifique-se de instalar as seguintes bibliotecas antes de executar os códigos:
@@ -28,10 +31,14 @@ Carregue as variáveis de ambiente no seu script utilizando `dotenv`.
 Este capítulo serve como base para a implementação de um pipeline utilizando LangChain e Groq. O objetivo é validar perguntas matemáticas, processá-las em formato JSON e utilizar um modelo de IA para fornecer respostas explicativas de forma simples.
 
 ## Utilizando o Programa
-Após instalar as dependências e configurar sua chave de API, certifique-se de que os [arquivos](https://github.com/joaomagi/LangChain-Project/tree/main/src/LangChain) foram instalados corretamente. Navegue até o diretório do projeto e execute:
+Após instalar as dependências e configurar sua chave de API, navegue até o diretório do projeto e execute:
 
 ```cmd
 python main.py
+```
+Exemplo de caminho de diretório:
+```cmd
+C:\LangChain-Project\src\LangChain>
 ```
 
 ## Estrutura do Código
@@ -70,7 +77,7 @@ A conexão entre os nós ocorre na seguinte ordem:
 O ponto de entrada do fluxo é o nó `validate_receptor`.
 
 ## Visualização do Fluxo
-Para gerar uma representação visual do fluxo LangGraph, é necessário instalar as bibliotecas necessárias e utilizar o seguinte código:
+Para gerar uma representação visual do fluxo LangGraph, é necessário instalar a biblioteca necessária e utilizar o seguinte código:
 
 ```cmd
 pip install ipython
