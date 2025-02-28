@@ -7,6 +7,7 @@ Este documento apresenta duas abordagens para a construção de um professor vir
 - [LangGraph](#LangGraph)
 - [Visualização do Fluxo](#visualiza%C3%A7%C3%A3o-do-fluxo)  
 - [Exemplos de Entrada/Saída](#exemplos-de-entrada-sa%C3%ADda)
+- [Referências](#refer%C3%AAncias)
   
 ## Pré Requisitos
 - Python 3.12
