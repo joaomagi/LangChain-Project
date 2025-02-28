@@ -1,10 +1,10 @@
 from langgraph.graph import StateGraph, END # Biblioteca para criação dos grafos
 
-# Importando as funções do módulo model
-from model import MathState, validate_node
-from model import to_json_node
-from model import virtual_teacher_node
-from model import State
+# Importando classes e funções responsáveis pelo fluxo de trabalho
+from LangGraph.Utils.State import State
+from LangGraph.Utils.MathState import MathState, validate_node
+from LangGraph.Utils.JSONState import to_json_node
+from LangGraph.Utils.VirtualTeacherState import virtual_teacher_node
 
 
 # Inicializa o fluxo de trabalho com a classe MathState
@@ -29,7 +29,7 @@ app = workflow.compile()
 # Inicializa o estado do sistema
 state = State(menssages=[])
 
-if __name__ == "__main__": # Verifica se o nome atual é main
+def main():
     while True:
         try: 
             # Solicita uma perunta matemática ao usuário
@@ -49,4 +49,10 @@ if __name__ == "__main__": # Verifica se o nome atual é main
         except ValueError as e:  # Tratamento do erro caso o usário nao faça uma pergunta matemática
             print(e)
             print("Tente novamente ")
+
+if __name__ == "__main__": # Verifica se o nome atual é main
+    main()
+    
+    
+    
     

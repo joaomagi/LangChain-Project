@@ -1,1 +1,1 @@
-from .model import validate_question, processing_questions, virtual_teacher
+from .helper import validate_question, processing_questions, virtual_teacher

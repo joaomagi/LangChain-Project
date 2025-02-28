@@ -1,0 +1,4 @@
+
+Renomei o arquivo para .env e coloque sua chave API
+
+GROQ_API_KEY=SuaChaveAPI

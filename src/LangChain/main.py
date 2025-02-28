@@ -5,9 +5,9 @@ from langchain_groq import ChatGroq # Biblioteca para utilização do grop
 from langchain_core.runnables import RunnableLambda # Permite encapsular funções como etapas reutilizáveis em pipelines do LangChain
 
 # Importando as funçoes do módulo "model"
-from model import validate_question
-from model import to_json
-from model import virtual_teacher
+from LangChain.helper import validate_question
+from LangChain.helper import to_json
+from LangChain.helper import virtual_teacher
 
 # Salva a chave API em uma variavel, carregando ela e verificar se está válida
 load_dotenv()
@@ -22,9 +22,8 @@ groq = ChatGroq(
     max_retries=2,
 )
 
-
-if __name__ == "__main__": # Verifica se o nome atual é main
-    while True: 
+def main():
+     while True: 
         try:
             # Solicita uma perunta matemática ao usuário
             user_input = input("Faça uma pergunta matématica: ")
@@ -50,3 +49,8 @@ if __name__ == "__main__": # Verifica se o nome atual é main
         except ValueError as e: # Tratamento do erro caso o usário nao faça uma pergunta matemática
             print(e)
             print("Tente novamente ")
+
+
+
+if __name__ == "__main__": # Verifica se o nome atual é main
+    main()
