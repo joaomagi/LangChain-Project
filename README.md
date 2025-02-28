@@ -188,6 +188,7 @@ Portanto, as soluções da equação são x = -8 e x = 5.
 
 ## Referências
 - [Documentação Oficial do LangChain](https://python.langchain.com/)
+- [Documentação Oficial do LangGraph](https://langchain-ai.github.io/langgraph/tutorials/introduction/)
 - [Console Groq](https://console.groq.com/docs/text-chat)
 - [Curso Udemy](https://www.udemy.com/course/lanchain/?couponCode=KEEPLEARNINGBR)
 
