@@ -35,11 +35,11 @@ Este capítulo serve como base para a implementação de um pipeline utilizando 
 Após instalar as dependências e configurar sua chave de API, navegue até o diretório do projeto e execute:
 
 ```cmd
-python main.py
+ python -m LangGraph.main
 ```
 Exemplo de caminho de diretório:
 ```cmd
-C:\LangChain-Project\src\LangChain>
+C:\LangChain-Project\src\>  python -m LangChain.main
 ```
 
 ## Estrutura do Código
