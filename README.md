@@ -39,7 +39,7 @@ Após instalar as dependências e configurar sua chave de API, navegue até o di
 ```
 Exemplo de caminho de diretório:
 ```cmd
-C:\LangChain-Project\src\>  python -m LangChain.main
+C:\LangChain-Project\src\>  python -m LangChain.main #Basta apenas alterar O nome de LangChain para LangGraph.main para alterar entre as aplicações
 ```
 
 ## Estrutura do Código
