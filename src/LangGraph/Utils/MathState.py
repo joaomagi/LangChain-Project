@@ -12,13 +12,13 @@ class MathState:
     response: str = ""
 
     # Validar se a pergunta contém termos matématicos
-    def validate_question(question: str):
-        if not re.search(math_expressions, question, re.IGNORECASE):
+    def validate_question(self):
+        if not re.search(math_expressions, self.question, re.IGNORECASE):
             raise ValueError("A pergunta não é sobre matemática")
-        return question
+        return self.question
 
 # Nó de validação
 def validate_node(state: MathState):
-    from LangGraph.Utils.JSONState import JSONState # Importa a Classe JSONState
-    state.validate_question(state.question)
+    from LangGraph.Utils.JSONState import JSONState
+    state.validate_question()  
     return JSONState(state.question)

@@ -3,9 +3,8 @@ from langgraph.graph import StateGraph, END # Biblioteca para criação dos graf
 # Importando classes e funções responsáveis pelo fluxo de trabalho
 from LangGraph.Utils.State import State
 from LangGraph.Utils.MathState import MathState, validate_node
-from LangGraph.Utils.JSONState import to_json_node
+from LangGraph.Utils.JSONState import JSONState, to_json_node
 from LangGraph.Utils.VirtualTeacherState import virtual_teacher_node
-
 
 # Inicializa o fluxo de trabalho com a classe MathState
 workflow = StateGraph(MathState)
